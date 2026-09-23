@@ -1,0 +1,75 @@
+% Gradient cover for main_ieee.pdf. US Letter, to match the IEEEtran paper.
+% Build: python gradient_bg.py; lualatex gradient; lualatex gradient
+\documentclass{article}
+\usepackage[paperwidth=612bp,paperheight=792bp,margin=0pt]{geometry}
+\usepackage{fontspec}
+\usepackage{tikz}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\usepackage{qrcode}
+\pagestyle{empty}
+
+\setmainfont{Inter}
+\newfontfamily\interreg{Inter-Regular.otf}[LetterSpace=-1.5]
+\newfontfamily\intermed{Inter-Medium.otf}
+\newfontfamily\intersemi{Inter-SemiBold.otf}
+\newfontfamily\interlight{Inter-Light.otf}
+
+\definecolor{navy}{HTML}{12305A}
+\definecolor{slate}{HTML}{5A6475}
+\newcommand{\repo}{https://github.com/big-oh/trust-horizon}
+
+\begin{document}
+\begin{tikzpicture}[remember picture,overlay,x=1bp,y=1bp]
+  % Origin at the top-left corner of the page; y grows downward as negative values.
+  \begin{scope}[shift={(current page.north west)}]
+    \node[anchor=north west,inner sep=0pt] at (0,0)
+      {\includegraphics[width=612bp,height=792bp]{gradient_bg.jpg}};
+
+    % Contour lines below the divider: nested curves that dip toward the centre line in
+    % small steps (a slope of 1 plus a sine whose peak slope cancels it).
+    \begin{scope}
+      \clip (0,-424) rectangle (612,-792);
+      \foreach \c in {424,454,...,1114} {
+        \draw[white,opacity=0.40,line width=0.5bp]
+          plot[domain=0:612,samples=200,smooth,variable=\t]
+          ({\t},{-\c+(100*sqrt(((\t-306)/100)^2+0.16)-40)
+                 -7*sin(8.2*(100*sqrt(((\t-306)/100)^2+0.16)-40))});
+      }
+    \end{scope}
+    \draw[white,opacity=0.45,line width=0.4bp] (0,-424) -- (612,-424);
+    \draw[white,opacity=0.35,line width=0.4bp] (306,-424) -- (306,-792);
+
+    % Wordmark and edition.
+    \node[anchor=base west,inner sep=0pt,text=white,font=\intersemi\fontsize{15}{18}\selectfont]
+      at (43,-66) {WebridgeAI Research};
+    \node[anchor=base east,inner sep=0pt,text=white,opacity=0.85,font=\intermed\fontsize{9}{11}\selectfont]
+      at (569,-66) {Preprint v0.2 \,·\, September 2026};
+
+    % Author, title and summary.
+    \node[anchor=base west,inner sep=0pt,text=white,font=\intermed\fontsize{12}{14}\selectfont]
+      at (43,-150) {Anas Siddiqui};
+    \node[anchor=north west,inner sep=0pt,text=white,align=left,font=\interreg\fontsize{33}{37}\selectfont]
+      at (42,-166) {Lusser’s Law for Agents:\\The Compounding-Reliability\\Gap in Long-Horizon\\Agent Harnesses};
+    \node[anchor=north west,inner sep=0pt,text=white,opacity=0.9,text width=360bp,align=left,
+          font=\interlight\fontsize{10}{14}\selectfont]
+      at (43,-340) {A series-reliability model of the agent loop, with closed-form results
+      for the trust horizon, verified retries, error laundering and context resets,
+      checked by Monte Carlo simulation.};
+
+    % Repository card.
+    \fill[white,opacity=0.94,rounded corners=10bp] (43,-652) rectangle (569,-749);
+    \node[anchor=base west,inner sep=0pt,text=slate,font=\intersemi\fontsize{7.5}{9}\selectfont]
+      at (63,-678) {\addfontfeature{LetterSpace=12}CODE AND DATA};
+    \node[anchor=base west,inner sep=0pt,text=navy,font=\intersemi\fontsize{19}{22}\selectfont]
+      at (63,-708) {\faGithub\hspace{7bp}github.com/big-oh/trust-horizon};
+    \node[anchor=base west,inner sep=0pt,text=slate,font=\interreg\fontsize{8.5}{10}\selectfont]
+      at (63,-730) {Simulator, experiment scripts, figures and LaTeX source. MIT License.};
+    \node[anchor=north east,inner sep=0pt,text=navy] at (555,-664)
+      {\qrcode[height=73bp,nolink]{\repo}};
+    % The whole card links to the repository.
+    \node[anchor=north west,inner sep=0pt] at (43,-652) {\href{\repo}{\rule{0pt}{97bp}\hspace{526bp}}};
+  \end{scope}
+\end{tikzpicture}
+\null
+\end{document}

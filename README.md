@@ -15,6 +15,7 @@ Tested with Python 3.14 on macOS (arm64). The pinned versions matter: simulated 
 pip install -r requirements.txt
 make            # validate.py -> experiments.py -> ablation.py -> figures.py -> paper_numbers.py
 make paper      # optional: rebuild paper/main_ieee.pdf (needs pdflatex and bibtex)
+make cover      # optional: rebuild the cover page and paper/main_ieee_with_cover.pdf (needs lualatex and pypdf)
 ```
 
 Without `make`, run the scripts in this order from the repository root:
@@ -46,7 +47,8 @@ cd paper && pdflatex main_ieee && bibtex main_ieee && pdflatex main_ieee && pdfl
 | `figures.py` | All figures in the paper |
 | `paper_numbers.py` | Checks each simulated or computed number in the paper against the outputs |
 | `*.json` | Outputs of the scripts above (committed, so they can be diffed after a rerun) |
-| `paper/` | LaTeX source (`main_ieee.tex`), bibliography (`refs.bib`, `main_ieee.bbl`), figures, and the compiled PDF |
+| `paper/` | LaTeX source (`main_ieee.tex`), bibliography (`refs.bib`, `main_ieee.bbl`), figures, the compiled PDF, and the same PDF with a cover page (`main_ieee_with_cover.pdf`) |
+| `paper/cover/` | Cover page source (`gradient.tex`), its background generator (`gradient_bg.py`), and the script that prepends it to the paper (`merge.py`) |
 
 ## License
 
