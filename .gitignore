@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+# LaTeX build by-products (main_ieee.bbl and main_ieee.pdf are committed)
+paper/*.aux
+paper/*.log
+paper/*.blg
+paper/*.out
+paper/*.toc
+paper/*.synctex.gz
+paper/*.fdb_latexmk
+paper/*.fls
