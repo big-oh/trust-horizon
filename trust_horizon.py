@@ -1,7 +1,7 @@
 """
 trust_horizon.py — reproducibility code for
 "Lusser's Law for Agents: The Compounding-Reliability Gap in Long-Horizon Agent Harnesses"
-A. Siddiqui, WebridgeAI Research, Working Paper v0.1 (Sep 2026).
+A. Siddiqui, WebridgeAI Research, preprint v0.2 (Sep 2026).
 
 Everything here is a *synthetic* model of an agent loop. No LLM is called.
 The simulator exists to (1) check the closed-form results in the paper and
@@ -13,7 +13,7 @@ Model of one task (n steps):
   * optional verifier ("sensor") with recall r = P(flag | wrong) and false-alarm f = P(flag | correct)
   * up to m attempts per step; a flagged final attempt escalates (detected failure)
   * optional "stuck" steps (prob phi): every attempt at that step repeats the same wrong output
-  * optional task heterogeneity: eps0 ~ Gamma(shape=k, mean=eps0) across tasks ("frailty")
+  * optional task heterogeneity: eps0 ~ Gamma(shape=k, mean=eps0) across tasks ("frailty"; k is nu in the paper)
 Outcome per task: success, silent failure (a wrong result was accepted), or detected failure (escalation).
 """
 from __future__ import annotations
@@ -132,7 +132,7 @@ class Harness:
     f: float = 0.0             # verifier false-alarm rate
     m: int = 1                 # max attempts per step
     phi: float = 0.0           # stuck-step probability
-    frailty_k: float | None = None   # Gamma shape for task heterogeneity (None = homogeneous)
+    frailty_k: float | None = None   # Gamma shape (nu in the paper) for task heterogeneity (None = homogeneous)
     v: float = 0.0             # verifier cost per attempt (in generation-attempt units)
     reset_cost: float = 0.0    # cost of one context reset
 

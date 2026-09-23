@@ -50,13 +50,17 @@ row("Sec. IV-D: G at r=0.9,f=0.05", 9.5, 0.95 / 0.1, 1)
 row("Sec. IV-D: G at r=0.5,f=0.02", 2, 0.98 / 0.5, 0)
 eps, r, f, phi, lam = 0.05, 0.9, 0.05, 0.02, 10
 a, b, c, _ = verifier_step(eps, r, f, 1)
-row("Sec. IV-E: m* example", 2.7, 1 + np.log((1 - phi) * a / (lam * phi * (1 - r))) / np.log(r / c), 1)
+row("Sec. IV-E: m* example", 2.6, 1 + np.log((1 - phi) * (a - lam * b) / (lam * phi * (1 - r))) / np.log(r / c), 1)
 row("Sec. IV-F: L* bare (ref. setting)", 20, reset_Lstar(0.005, 0.01, 0.01), 0)
 row("Sec. IV-F: L* verified (ref. setting)", 62, verified_Lstar(0.005, 0.01, 0.01, 0.9, 0.05), 0)
 row("Sec. IV-G: checkpoint L* (p=.99,v=5)", 20, checkpoint_Lstar(0.99, 5), 0)
 row("Sec. IV-G: W(1000) with checkpoints", 1530, checkpoint_cost(1000, 0.99, checkpoint_Lstar(0.99, 5), 5), -1)
 row("Sec. IV-G: restart cost n=1000 (x1e7)", 2.3, restart_cost(1000, 0.99, 5) / 1e7, 1)
 row("Sec. IV-H: transition recall", 0.96, 1 - 2 * 0.01 * 0.01 * 0.95 / 0.005, 2)
+et99 = silent_rate(0.005, 0.99, 0.05)
+row("Sec. IV-H: rho discounted by (1-r), r=0.99", 3550, np.log(1.25) / (et99 + np.sqrt(2 * et99 * 0.01 * 0.01 * 0.01)), -1)
+row("Prop. 2: ratio 1/5 at nu", 0.56, __import__("scipy.optimize", fromlist=["brentq"]).brentq(lambda k: frailty_horizon(0.8, 1, k) / frailty_horizon(0.5, 1, k) - 1 / 5, 0.05, 50), 2)
+row("Prop. 2: ratio 1/6 at nu", 0.42, __import__("scipy.optimize", fromlist=["brentq"]).brentq(lambda k: frailty_horizon(0.8, 1, k) / frailty_horizon(0.5, 1, k) - 1 / 6, 0.05, 50), 2)
 
 # --- Table V (validation)
 row("Table V: R(100) predicted", 0.366, V["E0"]["R100_analytic"], 3)
@@ -110,6 +114,8 @@ row("Pareto: no-sensor silent share (%)", 73.5, 100 * best("none")["silent"], 1)
 row("Pareto: tests+judge silent share (%)", 10.8, 100 * best("tests+judge")["silent"], 1)
 row("Pareto: tests+judge cost (x ideal)", 2.3, best("tests+judge")["cps"] / 150, 1)
 row("Pareto: lint m=1 plotted (success > 2%)", 1, float(min(cfg("lint", 1, L)["succ"] for L in (0, 20)) > 0.02), 0)
+row("Sec. VI: tests, m=3 within 1 point of m=5", 1, float(abs(cfg("tests", 5, 0)["succ"] - cfg("tests", 3, 0)["succ"]) < 0.01), 0)
+row("Sec. VI: tests+judge, m=5 far above m=3", 1, float(cfg("tests+judge", 5, 0)["succ"] - cfg("tests+judge", 3, 0)["succ"] > 0.2), 0)
 
 # per-step cost of tests with m=3, recomputed from the same seeds as experiments.py
 seed = 100; menu = {"none": (0, 0, 0), "lint": (0.40, 0.01, 0.05), "tests": (0.75, 0.03, 0.25), "judge": (0.80, 0.10, 0.60), "tests+judge": (0.92, 0.127, 0.85)}

@@ -19,7 +19,7 @@ def tag(ax,t,x=-0.12,y=1.04):
 
 FIGDIR="paper/figs_ieee"
 def save(fig,name):
-    fig.savefig(f"{FIGDIR}/{name}.pdf",bbox_inches="tight",pad_inches=0.04); plt.close(fig); print(name)
+    fig.savefig(f"{FIGDIR}/{name}.pdf",bbox_inches="tight",pad_inches=0.04,metadata={"CreationDate":None}); plt.close(fig); print(name)
 
 import os; os.makedirs(FIGDIR,exist_ok=True)
 
@@ -86,13 +86,13 @@ save(fig,"fig_passk")
 # ------------------------------------------------ F5 frailty / hazard shapes
 t=np.logspace(-2.5,1.3,400)
 fig,ax=plt.subplots(1,2,figsize=(W1,2.45),gridspec_kw=dict(wspace=0.32))
-curves=[("Constant hazard (Ord 2025)",lambda t: 0.5**t,INK,":"),
-        ("Gamma frailty, k=1  (= log-logistic, $\\beta$=1)",lambda t: frailty_survival(t,1,1),BLUE,"-"),
-        ("Weibull k=0.6 (Hamilton / Ord 2026)",lambda t: weibull_survival(t,1,0.6),FLARE,"-"),
-        ("Weibull k=0.37 (human baseline)",lambda t: weibull_survival(t,1,0.37),PERI,"--")]
+curves=[("Constant hazard",lambda t: 0.5**t,INK,":"),
+        ("Gamma frailty, $\\nu$=1  (log-logistic)",lambda t: frailty_survival(t,1,1),BLUE,"-"),
+        ("Weibull $\\nu$=0.6 (agents)",lambda t: weibull_survival(t,1,0.6),FLARE,"-"),
+        ("Weibull $\\nu$=0.37 (humans)",lambda t: weibull_survival(t,1,0.37),PERI,"--")]
 for lab,fn,c,ls in curves: ax[0].plot(t,fn(t),color=c,ls=ls,label=lab)
 ax[0].set_xscale("log"); ax[0].axhline(0.8,color=INK,lw=0.6,ls="--",alpha=0.5); ax[0].axvline(1,color=INK,lw=0.6,alpha=0.4)
-ax[0].set_xlabel("task length / $T_{50}$"); ax[0].set_ylabel("success probability"); ax[0].legend(loc="lower left",fontsize=6.3); tag(ax[0],"A")
+ax[0].set_xlabel("task length / $T_{50}$"); ax[0].set_ylabel("success probability"); ax[0].legend(loc="lower left",fontsize=6.3,frameon=True,facecolor="white",edgecolor="none",framealpha=1); tag(ax[0],"A")
 # hazard
 tt=np.logspace(-2,1.3,300)
 ax[1].plot(tt,np.full_like(tt,np.log(2)),color=INK,ls=":")
@@ -129,8 +129,8 @@ for e,c,lab,Lpts in [(eps0,FLARE,"bare loop ($\\varepsilon_0$ = 0.005)",[5,10,20
         res=simulate(Harness(eps0=e,gamma=gamma,L=L,rho=rho),600,20000,int(L)); n_,S=survival(res); sim.append(-np.log(S[600])/600*1e3)
     ax.plot(Lpts,sim,"o",color=c,mec=INK,mew=0.6,ms=4)
 ax.set_xscale("log"); ax.set_yscale("log"); ax.set_xlabel("context-reset interval L (steps)"); ax.set_ylabel("per-step hazard ($\\times 10^{-3}$)")
-ax.set_yticks([0.5,1,2,5,10,20]); ax.set_yticklabels(["0.5","1","2","5","10","20"]); ax.legend(loc="lower right",fontsize=6.6)
-ax.set_ylim(0.3,30)
+ax.set_yticks([0.5,1,2,5,10,20]); ax.set_yticklabels(["0.5","1","2","5","10","20"]); ax.legend(loc="upper right",fontsize=6.6,frameon=True,facecolor="white",edgecolor="none",framealpha=1)
+ax.set_ylim(0.3,60)
 save(fig,"fig_sqrt")
 
 # ------------------------------------------------ F9 laundering
@@ -154,9 +154,9 @@ save(fig,"fig_laundering")
 p=0.99; v=5; nn=np.arange(5,1001); Lc=checkpoint_Lstar(p,v)
 fig,ax=plt.subplots(figsize=(3.45,2.4))
 ax.plot(nn,restart_cost(nn,p,v),color=FLARE,label="check once at the end, rerun on failure")
-ax.plot(nn,checkpoint_cost(nn,p,Lc,v),color=BLUE,label=f"verified checkpoints every L* ≈ {Lc:.0f}")
+ax.plot(nn,checkpoint_cost(nn,p,Lc,v),color=BLUE,label=f"verified checkpoints every $L_c^*$ ≈ {Lc:.0f}")
 ax.plot(nn,nn,color=INK,ls=":",lw=1.1,label="ideal (no failures)")
-ax.set_yscale("log"); ax.set_xlabel("task length n (steps)"); ax.set_ylabel("expected steps executed"); ax.legend(loc="upper left",fontsize=7)
+ax.set_yscale("log"); ax.set_xlabel("task length n (steps)"); ax.set_ylabel("expected steps executed"); ax.legend(loc="lower right",fontsize=6.6)
 ax.text(620,4e3,"exponential",color=FLARE,fontsize=7.6,fontweight="bold",rotation=28); ax.text(700,1.35e3,"linear",color=BLUE,fontsize=7.6,fontweight="bold")
 ax.set_ylim(4,1e6)
 save(fig,"fig_checkpoint")

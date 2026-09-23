@@ -84,20 +84,20 @@ S.~Yao, N.~Shinn, P.~Razavi, and K.~Narasimhan, ``$\tau$-bench: A benchmark for
   \url{https://faafospecialist.substack.com/p/claude-code-figured-out-why-compact}
 \BIBentrySTDinterwordspacing
 
-\bibitem{openhands5355}
-\BIBentryALTinterwordspacing
-G.~Neubig, ``Loop detection kills agents that are waiting on long-running
-  processes,'' GitHub issue \#5355, OpenHands/OpenHands, Dec. 2024, accessed:
-  Sep. 23, 2026. [Online]. Available:
-  \url{https://github.com/OpenHands/OpenHands/issues/5355}
-\BIBentrySTDinterwordspacing
-
 \bibitem{mindstudio2026}
 \BIBentryALTinterwordspacing
 {MindStudio}, ``{AI} agent memory wall: Why agents fail at long-running jobs
   and how to fix it,'' MindStudio blog, Mar. 2026, accessed: Sep. 23, 2026.
   [Online]. Available:
   \url{https://www.mindstudio.ai/blog/ai-agent-memory-wall-long-running-jobs}
+\BIBentrySTDinterwordspacing
+
+\bibitem{openhands5355}
+\BIBentryALTinterwordspacing
+G.~Neubig, ``Loop detection kills agents that are waiting on long-running
+  processes,'' GitHub issue \#5355, OpenHands/OpenHands, Dec. 2024, accessed:
+  Sep. 23, 2026. [Online]. Available:
+  \url{https://github.com/OpenHands/OpenHands/issues/5355}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bockeler2026b}
