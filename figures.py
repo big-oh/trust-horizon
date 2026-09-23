@@ -44,9 +44,9 @@ ax[1].set_yticks([1,2,3,4,5]); ax[1].set_yticklabels(["90%","99%","99.9%","99.99
 save(fig,"fig_lusser")
 
 # ------------------------------------------------ F3 harness swings
-data=[("Gemini 3.1 Pro","Terminal-Bench 2",59.4,80.2,"Gemini CLI","TongAgents"),
-      ("Claude Opus 4.6","Terminal-Bench 2",58.0,76.4,"Claude Code","Meta-Harness"),
-      ("GPT-5.3-Codex","Terminal-Bench 2",64.7,78.4,"Terminus 2","SageAgent"),
+data=[("Gemini 3.1 Pro","Terminal-Bench 2.0",59.4,80.2,"Gemini CLI","TongAgents"),
+      ("Claude Opus 4.6","Terminal-Bench 2.0",58.0,76.4,"Claude Code","Meta-Harness"),
+      ("GPT-5.3-Codex","Terminal-Bench 2.0",64.7,78.4,"Terminus 2","SageAgent"),
       ("Claude Opus 4.5","SWE-bench Pro",45.9,55.4,"SEAL scaffold","Claude Code")]
 fig,ax=plt.subplots(figsize=(W1,2.25))
 for i,(m,b,lo,hi,hl,hh) in enumerate(data):

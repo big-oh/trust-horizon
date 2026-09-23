@@ -22,7 +22,7 @@
 \BIBdecl
 
 \bibitem{oconnor2012}
-P.~O'Connor and A.~Kleyner, \emph{Practical Reliability Engineering},
+P.~D.~T. O'Connor and A.~Kleyner, \emph{Practical Reliability Engineering},
   5th~ed.\hskip 1em plus 0.5em minus 0.4em\relax Chichester, U.K.: Wiley, 2012.
 
 \bibitem{beyer2016}
@@ -31,28 +31,45 @@ B.~Beyer, C.~Jones, J.~Petoff, and N.~R. Murphy, Eds., \emph{Site Reliability
   minus 0.4em\relax Sebastopol, CA, USA: O'Reilly Media, 2016.
 
 \bibitem{lopopolo2026}
+\BIBentryALTinterwordspacing
 R.~Lopopolo, ``Harness engineering: Leveraging {Codex} in an agent-first
-  world,'' OpenAI, Feb. 2026.
+  world,'' OpenAI Engineering, Feb. 2026, accessed: Sep. 23, 2026. [Online].
+  Available: \url{https://openai.com/index/harness-engineering/}
+\BIBentrySTDinterwordspacing
 
 \bibitem{bockeler2026}
+\BIBentryALTinterwordspacing
 B.~B{\"o}ckeler, ``Harness engineering for coding agent users,''
-  martinfowler.com, Apr. 2026.
+  martinfowler.com, Apr. 2026, accessed: Sep. 23, 2026. [Online]. Available:
+  \url{https://martinfowler.com/articles/harness-engineering.html}
+\BIBentrySTDinterwordspacing
 
 \bibitem{guo2026survey}
+\BIBentryALTinterwordspacing
 J.~Guo \emph{et~al.}, ``From question answering to task completion: A survey on
-  agent system and harness design,'' arXiv:2606.20683, 2026.
+  agent system and harness design,'' arXiv:2606.20683, Jun. 2026. [Online].
+  Available: \url{https://arxiv.org/abs/2606.20683}
+\BIBentrySTDinterwordspacing
 
 \bibitem{zhang2026disclose}
+\BIBentryALTinterwordspacing
 Y.~Zhang, J.~Wang, Y.~Ge, W.~Xu, J.~Hamm, and C.~K. Reddy, ``Stop comparing
-  {LLM} agents without disclosing the harness,'' arXiv:2605.23950, 2026.
+  {LLM} agents without disclosing the harness,'' arXiv:2605.23950, May 2026.
+  [Online]. Available: \url{https://arxiv.org/abs/2605.23950}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kwa2025v1}
+\BIBentryALTinterwordspacing
+T.~Kwa \emph{et~al.}, ``Measuring {AI} ability to complete long tasks,''
+  arXiv:2503.14499v1, Mar. 2025, first version; the 50\% and 80\% horizons of
+  Claude 3.7 Sonnet are reported in Sec.~4.2.1. [Online]. Available:
+  \url{https://arxiv.org/abs/2503.14499v1}
+\BIBentrySTDinterwordspacing
 
 \bibitem{kwa2025}
-T.~Kwa, B.~West, J.~Becker \emph{et~al.}, ``Measuring {AI} ability to complete
-  long tasks,'' arXiv:2503.14499, 2025.
-
-\bibitem{ord2025}
-T.~Ord, ``Is there a half-life for the success rates of {AI} agents?''
-  arXiv:2505.05115, 2025.
+------, ``Measuring {AI} ability to complete long software tasks,'' in
+  \emph{Proc. Adv. Neural Inf. Process. Syst. (NeurIPS)}, vol.~38, 2025,
+  arXiv:2503.14499v4.
 
 \bibitem{yao2024}
 S.~Yao, N.~Shinn, P.~Razavi, and K.~Narasimhan, ``$\tau$-bench: A benchmark for
@@ -61,90 +78,132 @@ S.~Yao, N.~Shinn, P.~Razavi, and K.~Narasimhan, ``$\tau$-bench: A benchmark for
 
 \bibitem{faafo2026}
 \BIBentryALTinterwordspacing
-{faafospecialist}, ``Claude {Code}: Figured out why /compact loses so much
-  useful context, and a potential fix,'' 2026. [Online]. Available:
+{FA\&FO Specialist}, ``Claude {Code}: Figured out why /compact loses so much
+  useful context, and a potential fix,'' Substack, Jan. 2026, accessed: Sep.
+  23, 2026. [Online]. Available:
   \url{https://faafospecialist.substack.com/p/claude-code-figured-out-why-compact}
 \BIBentrySTDinterwordspacing
 
 \bibitem{openhands5355}
 \BIBentryALTinterwordspacing
-{OpenHands}, ``Loop detection kills agents that are waiting on long-running
-  processes,'' GitHub issue \#5355. [Online]. Available:
-  \url{https://github.com/All-Hands-AI/OpenHands/issues/5355}
+G.~Neubig, ``Loop detection kills agents that are waiting on long-running
+  processes,'' GitHub issue \#5355, OpenHands/OpenHands, Dec. 2024, accessed:
+  Sep. 23, 2026. [Online]. Available:
+  \url{https://github.com/OpenHands/OpenHands/issues/5355}
 \BIBentrySTDinterwordspacing
 
 \bibitem{mindstudio2026}
 \BIBentryALTinterwordspacing
-{MindStudio}, ``The {AI} agent memory wall: Long-running jobs,'' 2026.
+{MindStudio}, ``{AI} agent memory wall: Why agents fail at long-running jobs
+  and how to fix it,'' MindStudio blog, Mar. 2026, accessed: Sep. 23, 2026.
   [Online]. Available:
   \url{https://www.mindstudio.ai/blog/ai-agent-memory-wall-long-running-jobs}
 \BIBentrySTDinterwordspacing
 
 \bibitem{bockeler2026b}
-B.~B{\"o}ckeler and C.~Ford, ``Harness engineering: Exploring {AI} coding
-  sensors,'' martinfowler.com, May 2026.
+\BIBentryALTinterwordspacing
+B.~B{\"o}ckeler and C.~Ford, ``Harness engineering and agent feedback:
+  Exploring {AI} coding sensors,'' Thoughtworks Insights (blog), May 2026,
+  accessed: Sep. 23, 2026. [Online]. Available:
+  \url{https://www.thoughtworks.com/en-us/insights/blog/generative-ai/harness-engineering-agent-feedback-exploring-ai-coding-sensors}
+\BIBentrySTDinterwordspacing
 
 \bibitem{anthropic2024}
 \BIBentryALTinterwordspacing
 E.~Schluntz and B.~Zhang, ``Building effective agents,'' Anthropic Engineering,
-  Dec. 2024. [Online]. Available:
+  Dec. 2024, accessed: Sep. 23, 2026. [Online]. Available:
   \url{https://www.anthropic.com/engineering/building-effective-agents}
 \BIBentrySTDinterwordspacing
 
 \bibitem{anthropic2025ctx}
-{Anthropic}, ``Effective context engineering for {AI} agents,'' Anthropic
-  Engineering, Sep. 2025.
+\BIBentryALTinterwordspacing
+P.~Rajasekaran, E.~Dixon, C.~Ryan, and J.~Hadfield, ``Effective context
+  engineering for {AI} agents,'' Anthropic Engineering, Sep. 2025, accessed:
+  Sep. 23, 2026. [Online]. Available:
+  \url{https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents}
+\BIBentrySTDinterwordspacing
 
 \bibitem{anthropic2025tools}
-------, ``Writing effective tools for agents---with agents,'' Anthropic
-  Engineering, Sep. 2025.
+\BIBentryALTinterwordspacing
+K.~Aizawa, ``Writing effective tools for agents---with agents,'' Anthropic
+  Engineering, Sep. 2025, accessed: Sep. 23, 2026. [Online]. Available:
+  \url{https://www.anthropic.com/engineering/writing-tools-for-agents}
+\BIBentrySTDinterwordspacing
 
 \bibitem{anthropic2025long}
-------, ``Effective harnesses for long-running agents,'' Anthropic Engineering,
-  Nov. 2025.
+\BIBentryALTinterwordspacing
+J.~Young, ``Effective harnesses for long-running agents,'' Anthropic
+  Engineering, Nov. 2025, accessed: Sep. 23, 2026. [Online]. Available:
+  \url{https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents}
+\BIBentrySTDinterwordspacing
 
 \bibitem{oreilly2026}
 \BIBentryALTinterwordspacing
-{O'Reilly Radar}, ``Agent harness engineering,'' 2026. [Online]. Available:
+A.~Osmani, ``Agent harness engineering,'' O'Reilly Radar, May 2026, accessed:
+  Sep. 23, 2026. [Online]. Available:
   \url{https://www.oreilly.com/radar/agent-harness-engineering/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{chen2021}
+\BIBentryALTinterwordspacing
 M.~Chen \emph{et~al.}, ``Evaluating large language models trained on code,''
-  arXiv:2107.03374, 2021.
+  arXiv:2107.03374, Jul. 2021. [Online]. Available:
+  \url{https://arxiv.org/abs/2107.03374}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ord2025}
+\BIBentryALTinterwordspacing
+T.~Ord, ``Is there a half-life for the success rates of {AI} agents?''
+  arXiv:2505.05115, May 2025. [Online]. Available:
+  \url{https://arxiv.org/abs/2505.05115}
+\BIBentrySTDinterwordspacing
+
+\bibitem{hamilton2026}
+\BIBentryALTinterwordspacing
+F.~Hamilton, ``Peto's paradox and the future of {AI} agents,''
+  gushamilton.github.io, Jan. 2026, updated Feb. 3, 2026. Accessed: Sep. 23,
+  2026. [Online]. Available:
+  \url{https://gushamilton.github.io/lab/2026/01/23/petos-paradox-ai-agents/}
+\BIBentrySTDinterwordspacing
 
 \bibitem{ord2026}
 \BIBentryALTinterwordspacing
-T.~Ord, ``Hazard rates for {AI} agents decline as a task goes on,'' Feb. 2026.
-  [Online]. Available:
+T.~Ord, ``Hazard rates for {AI} agents decline as a task goes on,''
+  tobyord.com, Feb. 2026, accessed: Sep. 23, 2026. [Online]. Available:
   \url{https://www.tobyord.com/writing/hazard-rates-for-ai-agents-decline}
 \BIBentrySTDinterwordspacing
 
 \bibitem{hal2026}
-S.~Kapoor, B.~Stroebl \emph{et~al.}, ``Holistic agent leaderboard: The missing
+S.~Kapoor \emph{et~al.}, ``Holistic agent leaderboard: The missing
   infrastructure for {AI} agent evaluation,'' in \emph{Proc. Int. Conf. Learn.
-  Represent. (ICLR)}, 2026.
+  Represent. (ICLR)}, 2026, arXiv:2510.11977.
 
 \bibitem{huang2024}
 J.~Huang \emph{et~al.}, ``Large language models cannot self-correct reasoning
-  yet,'' in \emph{Proc. Int. Conf. Learn. Represent. (ICLR)}, 2024.
+  yet,'' in \emph{Proc. Int. Conf. Learn. Represent. (ICLR)}, 2024,
+  arXiv:2310.01798.
 
 \bibitem{pan2025}
 J.~Pan \emph{et~al.}, ``Training software engineering agents and verifiers with
-  {SWE-Gym},'' arXiv:2412.21139, 2025.
+  {SWE-Gym},'' in \emph{Proc. 42nd Int. Conf. Mach. Learn. (ICML)}, ser. Proc.
+  Mach. Learn. Res., vol. 267, 2025, pp. 47\,717--47\,737.
 
 \bibitem{zhang2024}
 Y.~Zhang \emph{et~al.}, ``Small language models need strong verifiers to
-  self-correct reasoning,'' in \emph{Findings Assoc. Comput. Linguistics
-  (ACL)}, 2024.
+  self-correct reasoning,'' in \emph{Findings Assoc. Comput. Linguistics: ACL
+  2024}, Bangkok, Thailand, Aug. 2024, pp. 15\,637--15\,653.
 
 \bibitem{wei2025}
-J.~Wei, ``Asymmetry of verification and verifier's law,'' jasonwei.net, Jul.
-  2025.
+\BIBentryALTinterwordspacing
+J.~Wei, ``Asymmetry of verification and verifier's rule,'' jasonwei.net, Jul.
+  2025, accessed: Sep. 23, 2026. [Online]. Available:
+  \url{https://www.jasonwei.net/blog/asymmetry-of-verification-and-verifiers-law}
+\BIBentrySTDinterwordspacing
 
 \bibitem{karpathy2025}
 \BIBentryALTinterwordspacing
-A.~Karpathy, ``Verifiability,'' Nov. 2025. [Online]. Available:
+A.~Karpathy, ``Verifiability,'' karpathy.bearblog.dev, Nov. 2025, accessed:
+  Sep. 23, 2026. [Online]. Available:
   \url{https://karpathy.bearblog.dev/verifiability/}
 \BIBentrySTDinterwordspacing
 
@@ -154,8 +213,12 @@ N.~F. Liu \emph{et~al.}, ``Lost in the middle: How language models use long
   2024.
 
 \bibitem{hong2025}
+\BIBentryALTinterwordspacing
 K.~Hong, A.~Troynikov, and J.~Huber, ``Context rot: How increasing input tokens
-  impacts {LLM} performance,'' Chroma, Tech. Rep., Jul. 2025.
+  impacts {LLM} performance,'' Chroma, Tech. Rep., Jul. 2025, accessed: Sep.
+  23, 2026. [Online]. Available:
+  \url{https://research.trychroma.com/context-rot}
+\BIBentrySTDinterwordspacing
 
 \bibitem{vaupel1979}
 J.~W. Vaupel, K.~G. Manton, and E.~Stallard, ``The impact of heterogeneity in
@@ -171,10 +234,20 @@ J.~T. Daly, ``A higher order estimate of the optimum checkpoint interval for
   restart dumps,'' \emph{Future Gener. Comput. Syst.}, vol.~22, no.~3, pp.
   303--312, 2006.
 
+\bibitem{taubenchlb}
+\BIBentryALTinterwordspacing
+{Sierra Research}, ``$\tau$-bench: Leaderboard,'' GitHub repository
+  sierra-research/tau-bench, tool-calling agents, pass$^1$--pass$^4$. Accessed:
+  Sep. 23, 2026. [Online]. Available:
+  \url{https://github.com/sierra-research/tau-bench}
+\BIBentrySTDinterwordspacing
+
 \bibitem{openhands5225}
 \BIBentryALTinterwordspacing
-{OpenHands}, ``{LLMBadRequestError} from a poisoned tool\_result permanently
-  wedges conversations,'' GitHub issue \#5225. [Online]. Available:
+J.-M.~P. Shackelford, ``{LLMBadRequestError} from a poisoned tool\_result
+  permanently wedges conversations---no recovery path in {Agent.step},'' GitHub
+  issue \#5225, OpenHands/software-agent-sdk, Sep. 2026, accessed: Sep. 23,
+  2026. [Online]. Available:
   \url{https://github.com/OpenHands/software-agent-sdk/issues/5225}
 \BIBentrySTDinterwordspacing
 
